@@ -19,7 +19,7 @@ public class BookApp {
 
         books = new Book[]{book1, book2, book3, book4, book5};
 
-        System.out.println("\n Freshest book is " + getNewestBook(books).title);
+        System.out.println("\n Freshest book is " + getNewestBook(books));
         System.out.printf("\n Youngest writer is "); printYoungestWriter(books);
         System.out.printf("\n Books in Alphabetical Order;\n");printSortedByTitle(books);
         System.out.printf("\n Amount of books per writer\n");cuontBooksPerAuthor(books);
@@ -38,11 +38,11 @@ public class BookApp {
     public static void printYoungestWriter(Book[] books) {
 //        System.out.println(Stream.of(books).sorted(Comparator.comparing(b -> b.author.dateOfBIrth)).toString());
         Stream.of(books).sorted((b1,b2)-> b1.author.dateOfBIrth.compareTo(b2.author.dateOfBIrth));
-        System.out.println(books[0].author.lastName + books[0].author.fristName);
+        System.out.println(books[0].author.lastName + " " + books[0].author.fristName);
     }
 
     public static void printSortedByTitle(Book[] books) {
-        Stream.of(books).sorted(Comparator.comparing(book -> book.title)).forEach(book -> book.title.toString());
+        Stream.of(books).sorted(Comparator.comparing(book -> book.title)).forEach(System.out::println);
 
     }
 
@@ -70,6 +70,7 @@ public class BookApp {
 
     public static void printBooksRealeasedIn2016(Book[] books) {
         LocalDate d = LocalDate.of(2016, 1, 1);
-        System.out.println(Stream.of(books).filter(book -> book.getReleaseDate().isAfter(d)));
+        Stream.of(books).filter(book -> book.getReleaseDate().isAfter(d));
+        System.out.println(books[0].toString());
     }
 }

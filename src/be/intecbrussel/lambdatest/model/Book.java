@@ -54,4 +54,13 @@ public class Book {
         return genre;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", releaseDate=" + releaseDate +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }

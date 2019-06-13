@@ -25,4 +25,13 @@ public class Person {
     public LocalDate getDateOfBIrth() {
         return dateOfBIrth;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fristName='" + fristName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBIrth=" + dateOfBIrth +
+                '}';
+    }
 }
