@@ -11,6 +11,9 @@ public class Book {
     public String genre;
 
 
+    public Book() {
+    }
+
     public Book(String title, Person author, LocalDate releaseDate, String genre) {
         this.title = title;
         this.author = author;
@@ -50,4 +53,5 @@ public class Book {
     public String getGenre() {
         return genre;
     }
+
 }
